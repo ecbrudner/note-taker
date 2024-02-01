@@ -8,6 +8,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 //GET /notes should return the notes.html file.
@@ -27,12 +28,12 @@ app.get('/api/notes', (req, res) => res.json(noteData));
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received to add a note`);
   
-    const { title, textarea } = req.body;
-    if (title && textarea) {
+    const { title, text } = req.body;
+    if (title && text) {
       
-      const newNoteData = {
+      const newNote = {
         title,
-        textarea,
+        text,
         note_id: uuid(),
       };
     //add it to the db.json file
@@ -41,7 +42,7 @@ app.post('/api/notes', (req, res) => {
             console.error(err);
         } else {
             const parsedNotes= JSON.parse(data);
-            parsedNotes.push(newNoteData);
+            parsedNotes.push(newNote);
 
             fs.writeFile(
                 './db/db.json',
@@ -56,7 +57,7 @@ app.post('/api/notes', (req, res) => {
     //return the new note to the client
       const response = {
         status: 'success',
-        body: newNoteData,
+        body: newNote,
       };
   
       console.log(response);
@@ -69,13 +70,21 @@ app.post('/api/notes', (req, res) => {
 
 //DELETE/api/notes/:id should receive a query parameter containing the id of a note to delete.
 app.delete('/api/notes/:note_id', (req, res) => {
-    if (req.params.note_if) {
+    if (req.params.note_id) {
         console.info(`${req.method} request received to delete a note`);
         const noteId = req.params.note_id;
         for (let i=0; i<noteData.length; i++) {
             const currentNote= noteData[i];
             if (currentNote.note_id === noteId){
                 noteData.splice(i, 1);
+                fs.writeFile(
+                    './db/db.json',
+                    JSON.stringify(noteData, null, 4),
+                    (writeErr) =>
+                      writeErr
+                        ? console.error(writeErr)
+                        : console.info('Successfully updated notes!')
+                );
             }
         }
         res.status(200).send('Note deleted');

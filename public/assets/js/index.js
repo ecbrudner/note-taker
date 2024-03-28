@@ -45,13 +45,15 @@ const saveNote = (note) =>
     body: JSON.stringify(note)
   });
 
-const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
+const deleteNote = (id) => {
+  console.log('deleting note with id:', id);
+  return fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
     }
   });
+}
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
@@ -129,7 +131,13 @@ const handleRenderBtns = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+
+  console.log('notes received:', notes);
+
   let jsonNotes = await notes.json();
+
+  console.log('parsed json notes:', jsonNotes);
+  
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }

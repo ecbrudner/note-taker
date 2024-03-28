@@ -87,5 +87,20 @@
         "title": "todo",
         "text": "groceries\nworkout\nhomework",
         "note_id": "dc87"
+    },
+    {
+        "title": "for claire",
+        "text": "carrots\noat milk\ncoffee",
+        "note_id": "830b"
+    },
+    {
+        "title": "im gonna cry it finally work",
+        "text": "yay YAYAYAYAYAYAY",
+        "note_id": "fb7a"
+    },
+    {
+        "title": "final test",
+        "text": "it works!",
+        "note_id": "bed6"
     }
 ]

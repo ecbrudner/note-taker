@@ -74,24 +74,24 @@ app.post('/api/notes', (req, res) => {
   });
 
 
-//DELETE/api/notes/:id should receive a query parameter containing the id of a note to delete.
-app.delete('/api/notes/:note_id', (req, res) => {
-  const noteId = req.params.note_id;
-  console.info(`${req.method} request received to delete note with id ${noteId}`);
-  fs.readFile('./db/db.json', 'utf8', (err, data) => {
-    if (err) {
-       console.error(err);
-       res.status(500).json('Error reading notes from database');
-       return;
-    }
+// //DELETE/api/notes/:id should receive a query parameter containing the id of a note to delete.
+ app.delete('/api/notes/:note_id', (req, res) => {
+const noteId = req.params.note_id;
+ console.info(`${req.method} request received to delete note with id ${noteId}`);
+   fs.readFile('./db/db.json', 'utf8', (err, data) => {
+     if (err) {
+        console.error(err);
+        res.status(500).json('Error reading notes from database');
+        return;
+     }
 
     let notes = JSON.parse(data);
-    const index = notes.findIndex((note) => note.note_id === noteId);
+     const index = notes.findIndex((note) => note.note_id === noteId);
 
     if (index !== -1) {
       notes.splice(index,1);
-      fs.writeFile(
-        path.join(__dirname, './db/db.json'),
+       fs.writeFile(
+         path.join(__dirname, './db/db.json'),
         JSON.stringify(notes, null, 4),
         (writeErr) => {
           if (writeErr) {
@@ -99,15 +99,16 @@ app.delete('/api/notes/:note_id', (req, res) => {
             res.status(500).json('Error updating notes in database');
           } else {
             console.info('Successfully updated notes');
-            res.status(200).json('Successfully deleted note');
-          }
-        }
-      );
-    } else {
+             res.status(200).json('Successfully deleted note');
+           }
+         }
+       );
+     } else {
       res.status(404).json('Note not found');
-    }
+     }
   });
-});
+ });
+
 
 
 app.listen(PORT, () =>

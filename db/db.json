@@ -4,54 +4,9 @@
         "text": "Test text"
     },
     {
-        "title": "hello",
-        "text": "how are ya",
-        "note_id": "0c82"
-    },
-    {
-        "title": "hi",
-        "text": "how are you",
-        "note_id": "76be"
-    },
-    {
-        "title": "hi",
-        "text": "how are you",
-        "note_id": "e309"
-    },
-    {
-        "title": "hello",
-        "text": "how are ya",
-        "note_id": "3ab6"
-    },
-    {
-        "title": "hi",
-        "text": "how are ya",
-        "note_id": "5c4a"
-    },
-    {
-        "title": "hi",
-        "text": "how are ya",
-        "note_id": "1604"
-    },
-    {
-        "title": "hi",
-        "text": "how",
-        "note_id": "c5d4"
-    },
-    {
-        "title": "hello",
-        "text": "how are ya",
-        "note_id": "aef8"
-    },
-    {
         "title": "hi",
         "text": "how are you",
         "note_id": "e9f4"
-    },
-    {
-        "title": "hi",
-        "text": "how are you",
-        "note_id": "c54f"
     },
     {
         "title": "hello",
@@ -59,48 +14,13 @@
         "note_id": "3e4c"
     },
     {
-        "title": "test",
-        "text": "this one will work",
-        "note_id": "3b14"
-    },
-    {
-        "title": "test 43535",
-        "text": "im going to cry",
-        "note_id": "cdd1"
-    },
-    {
-        "title": "testing agin",
-        "text": "hahahaha",
-        "note_id": "394b"
-    },
-    {
-        "title": "test 20000",
-        "text": "testing return",
-        "note_id": "7ec3"
-    },
-    {
-        "title": "To do",
-        "text": "-grocerys\n-workout\n-homework",
-        "note_id": "80e5"
-    },
-    {
-        "title": "todo",
-        "text": "groceries\nworkout\nhomework",
-        "note_id": "dc87"
-    },
-    {
         "title": "for claire",
         "text": "carrots\noat milk\ncoffee",
         "note_id": "830b"
     },
     {
-        "title": "im gonna cry it finally work",
-        "text": "yay YAYAYAYAYAYAY",
-        "note_id": "fb7a"
-    },
-    {
-        "title": "final test",
-        "text": "it works!",
-        "note_id": "bed6"
+        "title": "final note",
+        "text": "I'm done!",
+        "note_id": "b065"
     }
 ]

@@ -1,5 +1,7 @@
 # note-taker
 
+[Link to Deployed App](https://express-note-takers-62649675c278.herokuapp.com/)
+
 ## Description
 I created this app so the user can easily write and save notes. The process of developing this web app allowed me to practice using Express.js, creating HTML and API routes.
 While the upfront work of writing the backend code was straightforward, I ended up having to do pretty extensive debugging to get the saved notes to display on the page and to display the existing notes upon clicking.
